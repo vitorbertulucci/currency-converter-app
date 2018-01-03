@@ -7,6 +7,7 @@ import {
 import { Container } from '../components/Container'
 import { Logo } from '../components/Logo'
 import { InputWithButton } from '../components/TextInput'
+import { ClearButton } from '../components/Button'
 
 const TEMP_BASE_CURRENCY = 'R$'
 const TEMP_QUOTE_CURRENCY = 'USD'
@@ -22,6 +23,9 @@ export default class Home extends Component {
   }
   handleTextChange = (text) => {
     console.log('change text', text)
+  }
+  handleReverseCurrency = () => {
+    console.log('reversing currency')
   }
 
   render() {
@@ -42,6 +46,7 @@ export default class Home extends Component {
           editable={false}
           value={TEMP_QUOTE_PRICE}
         />
+        <ClearButton text='Reverse currencies' onPress={this.handleReverseCurrency} />
       </Container>
     )
   }
