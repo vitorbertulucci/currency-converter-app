@@ -17,7 +17,8 @@ class ListItem extends Component {
     selected: PropTypes.bool,
     checkmark: PropTypes.bool,
     visible: PropTypes.bool,
-    customIcon: PropTypes.element
+    customIcon: PropTypes.element,
+    iconBackground: PropTypes.string
   }
   static defaultProps = {
     checkmark: true,
@@ -37,7 +38,10 @@ class ListItem extends Component {
           <Text style={styles.text}>{this.props.text}</Text>
           {
             this.props.selected ?
-              <Icon checkmark={this.props.checkmark} visible={this.props.visible} /> :
+              <Icon
+                checkmark={this.props.checkmark}
+                visible={this.props.visible}
+                iconBackground={this.props.iconBackground} /> :
               <Icon />
           }
           {this.props.customIcon}
